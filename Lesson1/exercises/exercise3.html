@@ -1,0 +1,135 @@
+<!doctype html>  
+<head>  
+  <meta charset="utf-8">  
+  <title>Exercise 3</title>    
+</head>  
+
+<body>
+    
+    <p>
+        Standard Books: <br />
+        Free: <label id="standardFreeLabel"></label> <br />
+        Borrowed: <label id="standardBorrowedLabel"></label>
+    </p>
+    
+    <p>
+        VIP Books: <br />
+        Free: <label id="vipFreeLabel"></label> <br />
+        Borrowed: <label id="vipBorrowedLabel"></label>
+    </p>
+    
+    <p>
+        <input id="titleInput" />
+    </p>
+    
+    <button id="addStandardBookBtn">Add Standard Book</button>
+    <button id="addVipBookBtn">Add VIP Book</button>
+    <button id="borrowStandardBtn">Borrow Standard Book</button>
+    <button id="borrowVipBtn">Borrow VIP Book</button>
+    
+    <script type="text/javascript">
+            
+        var library = {
+            standards: [],
+            vip: []
+        };
+        
+        function addBookToLibrary(title, library) {
+            library.push({
+                title: title,
+                isBorrowed: false
+            });
+        }
+        
+        function addStandardBook(title) {
+            addBookToLibrary(title, library.standards);
+        }
+        
+        function addVipBook(title) {
+            addBookToLibrary(title, library.vip);
+        }
+        
+        function findBookByTitle(library, title) {
+            var i = 0, bookFound = false, bookIndex = -1;
+            library.forEach(function(element) {
+                if (element.title === title && element.isBorrowed === false) {
+                    bookFound = true;
+                    bookIndex = i;
+                }
+                i += 1;
+            });
+            if (bookFound) {
+                library[bookIndex].isBorrowed = true;
+            }
+        }
+        
+        function borrowStandardBook(title) {
+            findBookByTitle(library.standards, title);
+        }
+        
+        function borrowVipBook(title) {
+            findBookByTitle(library.vip, title);
+        }
+        
+        function catalogingBooks(library, free, borrowed) {
+            library.forEach(function(element) {
+                if (element.isBorrowed) {
+                    borrowed.push(element.title);
+                } else {
+                    free.push(element.title);
+                }
+            });
+        }
+        
+        function printStandards() {
+            var free = [], borrowed = [];
+            
+            catalogingBooks(library.standards, free, borrowed);
+            
+            document.getElementById("standardFreeLabel").innerHTML = free.join(", ");
+            document.getElementById("standardBorrowedLabel").innerHTML = borrowed.join(", ");
+        }
+        
+        function printVip() {
+            var free = [], borrowed = [];
+            
+            catalogingBooks(library.vip, free, borrowed);
+            
+            document.getElementById("vipFreeLabel").innerHTML = free.join(", ");
+            document.getElementById("vipBorrowedLabel").innerHTML = borrowed.join(", ");
+        }
+        
+    </script>
+    
+    
+    <script type="text/javascript">
+        
+        document.getElementById("addStandardBookBtn").addEventListener("click", function() { 
+            var title = document.getElementById("titleInput").value;
+            addStandardBook(title);
+            printStandards();
+            printVip();
+        });
+        document.getElementById("addVipBookBtn").addEventListener("click", function() { 
+            var title = document.getElementById("titleInput").value;
+            addVipBook(title);
+            printStandards();
+            printVip();
+        });
+        document.getElementById("borrowStandardBtn").addEventListener("click", function() { 
+            var title = document.getElementById("titleInput").value;
+            borrowStandardBook(title);
+            printStandards();
+            printVip();
+        });
+        document.getElementById("borrowVipBtn").addEventListener("click", function() { 
+            var title = document.getElementById("titleInput").value;
+            borrowVipBook(title);
+            printStandards();
+            printVip();
+        });
+
+    </script>
+    
+</body>
+</html>  
