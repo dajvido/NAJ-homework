@@ -11,10 +11,11 @@
             sum += arguments[i];
         }
         return function() {
+            var sum2 = 0;
             for (var i=0; i<arguments.length; i++) {
-                sum += arguments[i];
+                sum2 += arguments[i];
             }
-            return sum;
+            return sum + sum2;
         };
 	};
 
