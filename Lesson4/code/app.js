@@ -1,26 +1,36 @@
 window.addEventListener('DOMContentLoaded', function () {
 	//When the page structure is loaded...
     function getValue(input) {
-        return input.getElementsByTagName('input')[0].value;
+        return input.querySelector('input').value;
     };
     
     function setBmi(weight, height) {
         bmi.innerText = Math.round((weight / (height/100 * height/100)) * 100) / 100;
         
         if (19 < bmi.innerText && bmi.innerText < 25) {
-            bmi.setAttribute('class', 'ok');
+            bmi.classList.remove('medium');
+            bmi.classList.remove('bad');
+            bmi.classList.add('ok');
         } else if (17 < bmi.innerText && bmi.innerText < 30) {
-            bmi.setAttribute('class', 'medium');
+            bmi.classList.remove('ok');
+            bmi.classList.remove('bad');
+            bmi.classList.add('medium');
         } else {
-            bmi.setAttribute('class', 'bad');
+            bmi.classList.remove('ok');
+            bmi.classList.remove('medium');
+            bmi.classList.add('bad');
         }
     };
     
-    var weight_input = document.getElementsByClassName('weight')[0],
-        weight_val = weight_input.getElementsByTagName('span')[0],
-        height_input = document.getElementsByClassName('height')[0],
-        height_val = height_input.getElementsByTagName('span')[0],
-        bmi = document.getElementsByTagName('h1')[2].getElementsByTagName('span')[0];
+    var weight_input = document.querySelector('.weight'),
+        weight_val = weight_input.querySelector('span'),
+        height_input = document.querySelector('.height'),
+        height_val = height_input.querySelector('span'),
+        bmi = document.querySelector('h1 span'),
+        weight = getValue(weight_input),
+        height = getValue(height_input);
+
+        setBmi(weight, height);
     
     weight_input.addEventListener('change', function() {
         var weight = getValue(weight_input),
