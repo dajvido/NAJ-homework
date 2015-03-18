@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', function () {
         var value = Math.round((weight / (height/100 * height/100)) * 100) / 100;
         bmi.textContent = value;
         
-        if (19 < value && value < 25) { // textvalue
+        if (19 < value && value < 25) {
             bmi.classList.remove('medium');
             bmi.classList.remove('bad');
             bmi.classList.add('ok');
