@@ -1,0 +1,18 @@
+#inputview {
+}
+#inputview label {
+  display: block;
+}
+#todo {
+  width: 241px;
+  display: inline;
+}
+
+#todo-table {
+  padding: 100px;
+  margin: 200px;
+  width: 500px;
+  background-color: lightblue;
+  border: 2px solid lightblue;
+  border-radius: 25px;
+}

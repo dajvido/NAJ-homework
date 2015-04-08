@@ -1,0 +1,7 @@
+ee.on("costam", function(arg1, arg2){}); nasłuchuje - odpowiednik addEventListener, 
+
+ee.emit("costam", 1,2,3); emituje
+
+INPUT VIEW -> emit("newsdata", inputValue);
+
+sosnowski
