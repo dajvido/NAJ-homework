@@ -1,0 +1,71 @@
+.row {
+  font-size: 14px;
+  display: block;
+  position: relative;
+}
+
+.row .column:first-child {
+  float: left;
+}
+
+.row .column:last-child {
+  border: 4px black solid;
+  float: right;
+  box-shadow: 7px 9px 10px gray;
+}
+
+.row .column:first-child h1 {
+  background-color: black;
+  margin: 0;
+  padding: 10px;
+  color: white;
+  border-radius: 18px 18px 0 0;
+}
+
+.row .column:last-child h1 {
+  background-color: orange;
+  margin: 0;
+  padding: 0.68em;
+  color: white;
+  font-style: italic;
+}
+
+.row .column:first-child p {
+  background-color: lightgray;
+  margin: 0;
+  padding: 40px;
+  color: black;
+  border-radius: 0 0 18px 18px;
+}
+
+.row .column:last-child p {
+  background-color: green;
+  margin: 0;
+  padding: 40px;
+  color: white;
+}
+
+.row .column:first-child p::first-letter {
+  font-size: 40px;
+}
+
+.row .column:last-child p::first-line {
+  font-weight: bold;
+  font-size: 19px;
+  text-shadow: -4px 3px 6px;
+}
+
+.column {
+  width: 45%;
+  display: table-cell;
+  margin: 0 30px 30px 30px
+}
+
+body .row:last-child h1 {
+  text-align: center;
+}
+
+body .row:last-child p:before {
+  /*content: "<img src='cat.jpg'>"*/
+  content: url(cat.jpg);
+}
