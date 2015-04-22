@@ -5,5 +5,12 @@ UAM.Store = function () {
 
 UAM.utils.inherits(UAM.EventEmitter, UAM.Store);
 
-UAM.Store.prototype.add = function (data) {};
+UAM.Store.prototype.add = function (data) {
+  console.log("Store add " + data);
+  this.data.push({
+    task: data,
+    done: false
+  });
+};
+
 UAM.Store.prototype.update = function (id, data) {};

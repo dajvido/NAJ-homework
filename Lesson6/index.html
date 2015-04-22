@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>My first SPA question</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-	</head>
+  <head>
+      <title>My first SPA question</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+  </head>
 
-	<body>
+  <body>
     <div id="todo-table">
-      <div id="inputview" class="form-group">
+      <div class="form-group">
         <label for="todo">Todo:</label>
-        <input id="todo" class="form-control" type="text" name="todo">
-        <button class="btn btn-default" type="button">Add</button>
+        <input id="inputview" class="form-control" type="text" name="todo">
+        <button id="buttontodo" class="btn btn-default">Add</button>
       </div>
       <ul id="listview" class="list-group">
         <li class="list-group-item">test1</li>
@@ -21,5 +21,17 @@
         In list are <span id="list-all">0</span> todos and <span id="list-active">0</span> are active.
       </footer>
     </div>
-	</body>
+    
+    <script type="text/javascript" src="js/ee.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/store.js"></script>
+    <script type="text/javascript" src="js/controllers/input_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/list_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/footer_controller.js"></script>
+    <script type="text/javascript" src="js/views/input_view.js"></script>
+    <script type="text/javascript" src="js/views/list_view.js"></script>
+    <script type="text/javascript" src="js/views/footer_view.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    
+  </body>
 </html>
