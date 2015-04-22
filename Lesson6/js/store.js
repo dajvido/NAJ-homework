@@ -15,4 +15,8 @@ UAM.Store.prototype.add = function (data) {
   this.emit("todos_show");
 };
 
-UAM.Store.prototype.update = function (id, data) {};
+UAM.Store.prototype.update = function (id, data) {
+  console.log("Store update task with id " + id);
+  this.data[id].done = !this.data[id].done;
+  data.update(this.data);
+};
