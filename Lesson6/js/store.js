@@ -11,6 +11,8 @@ UAM.Store.prototype.add = function (data) {
     task: data,
     done: false
   });
+  console.log("Store emit show");
+  this.emit("todos_show");
 };
 
 UAM.Store.prototype.update = function (id, data) {};

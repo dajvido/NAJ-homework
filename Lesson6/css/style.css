@@ -16,3 +16,11 @@
   border: 2px solid lightblue;
   border-radius: 25px;
 }
+
+#listview label {
+  background-color: red;
+}
+
+.todo {
+  background-color: green !important;
+}
