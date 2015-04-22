@@ -5,9 +5,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	var inputView = new UAM.InputView(document.querySelector('#inputview'));
 	var listView = new UAM.ListView(document.querySelector('#listview'));
-//	var footerView = new UAM.FooterView(document.querySelector('#footerview'));
+	var footerView = new UAM.FooterView(document.querySelector('#footerview'));
 
 	new InputCtrl(inputView, store);
 	new ListCtrl(listView, store);
-//	new FooterCtrl(footerView, store);
+	new FooterCtrl(footerView, store);
 });
