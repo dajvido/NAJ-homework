@@ -12,11 +12,11 @@ UAM.Store.prototype.add = function (data) {
     done: false
   });
   console.log("Store emit show");
-  this.emit("todos_show");
+  this.emit("todos_show", this.data);
 };
 
 UAM.Store.prototype.update = function (id, data) {
   console.log("Store update task with id " + id);
   this.data[id].done = !this.data[id].done;
-  this.emit("todos_show");
+  this.emit("todos_show", this.data);
 };

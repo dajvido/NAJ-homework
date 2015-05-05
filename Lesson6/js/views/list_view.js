@@ -11,7 +11,7 @@ UAM.ListView.prototype.update = function(data) {
   this.elem.innerHTML = "";
   for (var i=0; i<data.length; i++) {
     var checked = "",
-        todo = "todo"
+        todo = "todo";
     if (data[i].done) {
       checked = " checked ";
       todo = "";

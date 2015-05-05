@@ -1,10 +1,9 @@
 function FooterCtrl(footerView, store) {
   UAM.EventEmitter.call(this);
   
-  store.on("todos_show", function () {
+  store.on("todos_show", function (data) {
     console.log("Footer Controller update");
-    var data = store.data,
-        all = data.length;
+    var all = data.length;
     var active = 0;
     for (var i=0; i<all; i++) {
       if (!data[i].done) {
