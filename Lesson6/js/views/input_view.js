@@ -8,7 +8,8 @@ UAM.InputView = function(data) {
 
   button.addEventListener('click', function() {
     console.log("Input View emit add");
-    ths.emit("todo_add");
+    ths.emit("todo_add", ths.input.value);
+    ths.input.value = '';
   });
 }
 

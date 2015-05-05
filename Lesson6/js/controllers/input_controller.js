@@ -1,12 +1,11 @@
 function InputCtrl(inputView, store) {
   UAM.EventEmitter.call(this);
   
-  inputView.on("todo_add", function () {
+  inputView.on("todo_add", function (inputValue) {
 
-    if (inputView.input.value) {
-      console.log("Input Controller add " + inputView.input.value);
-      store.add(inputView.input.value);
-      inputView.input.value = '';
+    if (inputValue) {
+      console.log("Input Controller add " + inputValue);
+      store.add(inputValue);
     }
   });
 }
