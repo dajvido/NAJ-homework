@@ -38,7 +38,7 @@ app.get('/elements', function (req, res) {
 	res.json(savedData);
 });
 
-app.get('/elements/:id', function (req, res) {
+app.put('/elements/:id', function (req, res) {
 	var element;
 	savedData.forEach(function (record) {
 		console.log(req.params.id);
