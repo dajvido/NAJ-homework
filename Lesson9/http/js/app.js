@@ -12,9 +12,9 @@ angular.module('app', []).controller('AppCtrl', function ($scope, $http) {
 	}
 
 	$scope.clickElement = function (element) {
-		var promiseElement = $http.put('/elements/' + element.id, {count: element.count + 1})
-		promiseElement.success(function(elem) {
-			element.count = elem.count;
-		})
+		$http.put('/elements/' + element.id, {count: element.count + 1})
+			.success(function(elem) {
+				element.count = elem.count;
+			})
 	};
 });
