@@ -12,6 +12,10 @@ angular.module('app', []).controller('AppCtrl', function ($scope, $http) {
 	}
 
 	$scope.clickElement = function (element) {
-		
+		element.count += 1;
+		var promiseElement = $http.put('/elements/' + element.id, element)
+		promiseElement.then(function(elem) {
+			$scope.results[element.id] = elem;
+		})
 	};
 });
