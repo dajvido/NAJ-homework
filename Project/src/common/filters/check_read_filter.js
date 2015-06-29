@@ -4,7 +4,11 @@
 
     function CheckReadFilter() {
       function filter(input) {
-        return input ? 'read' : 'unread'
+        if (input !== undefined) {
+          return input ? 'read' : 'unread';
+        } else {
+          return 'read';
+        }
       }
       return filter;
     }

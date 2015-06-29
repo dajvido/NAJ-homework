@@ -10,7 +10,9 @@
         });
       },
       fetchSentAll: function() {
-        return [];
+        return $http.get('/sent').then(function(res) {
+          return res;
+        });
       },
       deleteById: function(id) {
         return $http.delete('/emails/' + id).then(function(res) {

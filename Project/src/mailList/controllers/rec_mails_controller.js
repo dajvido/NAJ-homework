@@ -4,6 +4,7 @@ angular.module('mailApp')
 
 function RecMailsCtrl(ReceivedMails) {
   var ths = this;
+  ths.type = 'Sender'
   ReceivedMails.fetchRecAll().then(function(res) {
     ths.list = res.data;
   });
