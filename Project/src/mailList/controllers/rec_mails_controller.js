@@ -4,6 +4,8 @@ angular.module('mailApp')
 
 function RecMailsCtrl(ReceivedMails) {
   var ths = this;
-  ths.list = ReceivedMails.fetchRecAll();
+  ReceivedMails.fetchRecAll().then(function(res) {
+    ths.list = res.data;
+  });
 }
 }());

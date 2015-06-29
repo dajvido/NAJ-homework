@@ -3,10 +3,12 @@
     <td>Sender</td>
     <td>Title</td>
     <td>Content</td>
+    <td></td>
   </tr>
-  <tr ng-repeat="mail in mails.list">
+  <tr ng-repeat="mail in mails.list | orderObjectBy:'received'">
     <td class="{{ mail.read|read }}">{{ mail.sender }}</td>
     <td class="{{ mail.read|read }}">{{ mail.title }}</td>
     <td class="{{ mail.read|read }}">{{ mail.content.substring(0,28) }}...</td>
+    <td class="remove-button"><a href="#/delete/{{ mail.id }}">X</a></td>
   </tr>
 </table>
