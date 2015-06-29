@@ -12,7 +12,7 @@
       fetchSentAll: function() {
         return [];
       },
-      deleteOne: function(id) {
+      deleteById: function(id) {
         return $http.delete('/emails/' + id).then(function(res) {
           return res;
         });
