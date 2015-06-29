@@ -4,9 +4,13 @@
         <meta charset="utf-8">
 
         <title>Email Client</title>
+        <h1>Best Email Client on the world!</h1>
+
+        <div ng-view></div>
 
         <script src="lib/angular.js"></script>
         <script src="lib/angular-route.min.js"></script>
+        <script src="src/app.js"></script>
         <script src="src/mailList/controllers/rec_mails_controller.js"></script>
         <script src="src/mailList/controllers/sent_mails_controller.js"></script>
         <script src="src/mailNew/controllers/new_mail_controller.js"></script>
@@ -16,7 +20,6 @@
         <script src="src/mailList/services/mail_receiver.service.js"></script>
         <script src="src/mailNew/services/mail_sender.service.js"></script>
         <script src="src/mailDetails/services/mail_viewer.service.js"></script>
-        <script src="src/app.js"></script>
     </head>
     <body>
     </body>

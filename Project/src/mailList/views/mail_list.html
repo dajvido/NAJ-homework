@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <td>Sender</td>
+    <td>Title</td>
+    <td>Content</td>
+  </tr>
+  <tr ng-repeat="mail in mails.list">
+    <td>{{ mail.sender }}</td>
+    <td>{{ mail.title }}</td>
+    <td>{{ mail.content.substring(0,28) }}...</td>
+  </tr>
+</table>
