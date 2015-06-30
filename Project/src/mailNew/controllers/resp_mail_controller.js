@@ -2,10 +2,11 @@
   angular.module('mailApp')
     .controller('RespMailCtrl', RespMailCtrl);
 
-  function RespMailCtrl(SendMail, $location) {
+  function RespMailCtrl(SendMail, Config, $location) {
     var ths = this
     email_id = $location.path().split("/")[2];
 
+    Config.paintWindow();
     SendMail.fetchOne(email_id).then(function(res) {
       ths.data = res.data;
       ths.newMail = {

@@ -6,6 +6,12 @@
   display: none;
 }
 
-.red {
-  color: red;
+.white {
+  background-color: white;
+}
+.gray {
+  background-color: gray;
+}
+.teal {
+  background-color: teal;
 }

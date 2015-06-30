@@ -1,0 +1,12 @@
+<div id="config" class="{{config.layout}}">
+  <div>
+    <span>Layout:</span></br>
+    <select ng-model="layoutSelected" ng-change="config.setLayout(layoutSelected)" data-ng-options="layout as layout for layout in layouts"></select>
+    {{itemList}}
+  </div>
+
+  <div>
+    <label for="time">Refresh time:</label>
+    <input id="time" type="number" ng-model="time" ng-change="config.setRefreshTime(time)">
+  </div>
+</div>

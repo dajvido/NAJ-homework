@@ -1,9 +1,7 @@
 (function(){
-angular.module('mailApp', ['ngRoute', 'mail_receiver.service', 'mail_sender.service', 'mail_viewer.service'])
+angular.module('mailApp', ['ngRoute', 'mail_receiver.service', 'mail_sender.service', 'mail_viewer.service', 'config.service'])
   .config(function($routeProvider) {
     $routeProvider
-      .when('/', {
-      })
       .when('/inbox', {
           templateUrl: 'src/mailList/views/mail_list.html',
           controller: 'RecMailsCtrl',
@@ -30,7 +28,7 @@ angular.module('mailApp', ['ngRoute', 'mail_receiver.service', 'mail_sender.serv
           controllerAs: 'mail'
       })
       .when('/config', {
-          templateUrl: 'src/mailList/views/config.html',
+          templateUrl: 'src/config/views/config.html',
           controller: 'ConfigCtrl',
           controllerAs: 'config'
       })
