@@ -1,3 +1,11 @@
 .unread {
   font-weight: bold;
 }
+
+.hidden {
+  display: none;
+}
+
+.red {
+  color: red;
+}

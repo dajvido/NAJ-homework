@@ -7,22 +7,32 @@
       send: function(email) {
         email.id = Date.now();
         email.sent = Date.now();
-        email.receivers = email.receivers.replace(/ /g, '');
-        email.receivers = email.receivers.split(/[;,]/);
-        var valid = true;
-        for (var i=0; i < email.receivers.length; i++) {
-          if (!validateEmail(email.receivers[i])) {
-            valid = false;
+        if (email.receivers !== undefined && email.receivers !== "") {
+          if (typeof(email.receivers) !== "object") {
+            email.receivers = email.receivers.replace(/ /g, '');
+            email.receivers = email.receivers.split(/[;,]/);
           }
-        }
-        if (valid) {
-          return $http.post('/sent', email).then(function(res) {
-            $location.path("/sent");
-          });;
+          var valid = true;
+          for (var i=0; i < email.receivers.length; i++) {
+            if (!validateEmail(email.receivers[i])) {
+              valid = false;
+            }
+          }
+          if (valid) {
+            return $http.post('/sent', email).then(function(res) {
+              $location.path("/sent");
+            });;
+          } else {
+            alert("Invalid receiver");
+          }
         } else {
-          console.log(email.receivers);
-          $location.path("/create");
+          alert("Receiver can't be blank");
         }
+      },
+      fetchOne: function(id) {
+        return $http.get('/emails/' + id).then(function(res) {
+          return res;
+        });
       },
     }
   }

@@ -21,6 +21,9 @@
           $location.path("/inbox");
         });
       },
+      response: function(id) {
+        $location.path("/create/" + id);
+      }
     }
   }
 }());

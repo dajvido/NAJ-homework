@@ -14,5 +14,9 @@ function MailViewCtrl(MailView, $location) {
   ths.remove = function() {
     MailView.deleteById(email_id);
   }
+
+  ths.response = function() {
+    MailView.response(email_id);
+  }
 }
 }());
