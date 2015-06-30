@@ -7,7 +7,7 @@
   </tr>
   <tr ng-repeat="mail in mails.list | orderObjectBy:'received'">
     <td class="{{ mail.read|read }}">{{ mail.sender !== undefined ? mail.sender : mail.receivers }}</td>
-    <td class="{{ mail.read|read }}">{{ mail.title }}</td>
+    <td class="{{ mail.read|read }}"><a href="#/view/{{ mail.id }}">{{ mail.title }}</a></td>
     <td class="{{ mail.read|read }}">{{ mail.content.substring(0,28) }}...</td>
     <td class="remove-button"><button class="btn btn-default" ng-click="mails.remove(mail.id)">X</button></td>
   </tr>

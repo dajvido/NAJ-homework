@@ -3,7 +3,6 @@ angular.module('mailApp', ['ngRoute', 'mail_receiver.service', 'mail_sender.serv
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'index.html'
       })
       .when('/inbox', {
           templateUrl: 'src/mailList/views/mail_list.html',

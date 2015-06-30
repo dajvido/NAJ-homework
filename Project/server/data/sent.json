@@ -43,5 +43,23 @@
       "sosnowski@outlook.com"
     ],
     "sent": 1433280001205
+  },
+  {
+    "receivers": "test@example.com",
+    "title": "test_title",
+    "content": "test_content bla bla bla bla",
+    "id": 1435621863721,
+    "sent": 1435621863721
+  },
+  {
+    "receivers": [
+      "test@gmail.com",
+      "test2@gmail.com",
+      "test3@gmail.com"
+    ],
+    "title": "fdsafddafs",
+    "content": "fdasfadsfafs",
+    "id": 1435622880753,
+    "sent": 1435622880753
   }
 ]
