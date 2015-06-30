@@ -7,6 +7,12 @@
       send: function(email) {
         email.id = Date.now();
         email.sent = Date.now();
+        if (email.title === undefined || email.title === "") {
+          alert("Title can't be blank");
+        }
+        if (email.content === undefined || email.content === "") {
+          alert("Content can't be blank");
+        }
         if (email.receivers !== undefined && email.receivers !== "") {
           if (typeof(email.receivers) !== "object") {
             email.receivers = email.receivers.replace(/ /g, '');
@@ -21,7 +27,7 @@
           if (valid) {
             return $http.post('/sent', email).then(function(res) {
               $location.path("/sent");
-            });;
+            });
           } else {
             alert("Invalid receiver");
           }
